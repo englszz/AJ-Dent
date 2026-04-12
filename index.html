@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Dent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="assets/AJ DENT - Copy_resized.png" type="image/png">
+    <meta property="og:title" content="Aj Dent - Clínica Dental Profesional">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:description" content="Odontología de vanguardia con tecnología 3D y atención personalizada.">
+    <meta property="og:image" content="https://i.imgur.com/AjUXkne.png">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta property="og:type" content="website">
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+    }
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-3" href="#inicio">
+                    <img src="assets/AJ DENTt.png" alt="Aj Dent Logo" style="width: 210px; height: 70px; border-radius: 8px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#horario">Horario</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#antes-despues">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#precios">Tarifas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resenas">Reseñas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ══ HERO — diseño igual a la foto ══ -->
+        <section class="hero fade-in-up" id="inicio">
+            <div class="container" style="position:relative;z-index:1;">
+                <!-- Logo grande centrado, igual a la captura -->
+                <img src="assets/AJ DENTt.png" alt="AJ Dent Logo" class="hero-logo">
+
+                <p class="hero-tagline">
+                    Odontología de vanguardia con tecnología 3D y cuidado personalizado.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://wa.me/18494892788?text=Hola%2C%20quiero%20agendar%20una%20cita.%20Me%20podr%C3%ADan%20dar%20informaci%C3%B3n%2C%20por%20favor%3F" target="_blank"
+                       class="btn btn-lg" style="background:var(--primary);color:white;font-weight:700;">
+                        <i class="fab fa-whatsapp me-2"></i>Agenda tu Cita
+                    </a>
+                    <a href="#servicios"
+                       class="btn btn-lg" style="background:white;color:var(--primary-dark);border:2px solid rgba(8,145,178,0.3);font-weight:600;">
+                        Ver Servicios
+                    </a>
+                </div>
+
+                <!-- Estadísticas, separadas por divisores -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>1,500+</strong>
+                        <span>Pacientes atendidos</span>
+                    </div>
+                    <div class="hero-divider"></div>
+                    <div class="hero-stat">
+                        <strong>8+</strong>
+                        <span>Años de experiencia</span>
+                    </div>
+                    <div class="hero-divider"></div>
+                    <div class="hero-stat">
+                        <strong>15+</strong>
+                        <span>Servicios disponibles</span>
+                    </div>
+                    <div class="hero-divider"></div>
+                    <div class="hero-stat">
+                        <strong>4.9 ★</strong>
+                        <span>Valoración promedio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule-section section" id="horario">
+            <div class="container">
+                <h2 class="section-title fade-in-up" style="color:white;">Horario de Atención</h2>
+                <p class="section-subtitle fade-in-up" style="color:rgba(255,255,255,0.6);">Estamos aquí cuando nos necesitas</p>
+                <div class="row g-3 justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-1">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">☀️</div>
+                            <div class="schedule-day">Lunes</div>
+                            <div class="schedule-time">9am – 8pm</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-1">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">☀️</div>
+                            <div class="schedule-day">Martes</div>
+                            <div class="schedule-time">9am – 8pm</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-2">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">☀️</div>
+                            <div class="schedule-day">Miércoles</div>
+                            <div class="schedule-time">9am – 8pm</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-2">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">☀️</div>
+                            <div class="schedule-day">Jueves</div>
+                            <div class="schedule-time">9am – 8pm</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-3">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">☀️</div>
+                            <div class="schedule-day">Viernes</div>
+                            <div class="schedule-time">9am – 8pm</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-3">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">🌤️</div>
+                            <div class="schedule-day">Sábado</div>
+                            <div class="schedule-time">8am - 3pm</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 fade-in-up stagger-delay-3">
+                        <div class="schedule-card text-center">
+                            <div class="schedule-icon">🌤️</div>
+                            <div class="schedule-day">Domingo</div>
+                            <div class="schedule-time">8am - 3pm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5 fade-in-up">
+                    <a href="https://wa.me/18494892788?text=Hola%2C%20quiero%20agendar%20una%20cita.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn btn-lg" style="background:white;color:var(--primary-dark);font-weight:700;">
+                        <i class="fab fa-whatsapp me-2"></i>Reservar cita ahora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="servicios">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Cartera de Servicios</h2>
+                <p class="section-subtitle fade-in-up">Tratamientos integrales con la mejor tecnología</p>
+                <div class="row g-4">
+                    <div class="col-md-4 fade-in-up stagger-delay-1">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">🦷</div>
+                                <h3>Profilaxis / limpieza</h3>
+                                <p>Limpieza profunda para eliminar placa, sarro y cuidar tu sonrisa.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20la%20Profilaxis%20y%20Limpieza%20dental.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-2">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">🔬</div>
+                                <h3>Caries / restauraciones</h3>
+                                <p>Tratamiento de caries y reparación de dientes dañados para devolverles su función y estética.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20Tratamiento%20de%20Caries%20y%20Restauraciones.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">💉</div>
+                                <h3>Tratamiento de canal</h3>
+                                <p>Eliminación de infecciones internas del diente para aliviar el dolor y conservar la pieza dental.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20Tratamiento%20de%20Canal%20%28Endodoncia%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-1">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">✨</div>
+                                <h3>Blanqueamiento</h3>
+                                <p>Aclarado dental para lograr una sonrisa más blanca, limpia y brillante.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20Blanqueamiento%20Dental.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-2">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">😁</div>
+                                <h3>Brackets</h3>
+                                <p>Corrección de dientes torcidos para mejorar tu sonrisa y tu mordida.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20los%20Brackets%20%28Ortodoncia%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">🦴</div>
+                                <h3>Prótesis (Todo tipo de prótesis)</h3>
+                                <p>Reemplazo de dientes perdidos con prótesis fijas o removibles para recuperar tu sonrisa.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20Pr%C3%B3tesis%20Dentales.%20Me%20pueden%20dar%20informaci%C3%B3n%20sobre%20los%20tipos%20disponibles%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-1">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">⚕️</div>
+                                <h3>Cirugía / extracción dental</h3>
+                                <p>Extracción segura de dientes dañados o retenidos para cuidar tu salud bucal.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20la%20Cirug%C3%ADa%20y%20Extracci%C3%B3n%20Dental.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fade-in-up stagger-delay-2">
+                        <div class="card h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <div class="service-icon">🔧</div>
+                                <h3>Cirugía tercer molar / cordajes</h3>
+                                <p>Extracción especializada de cordales para evitar dolor, infecciones y molestias.</p>
+                                <a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20la%20Extracci%C3%B3n%20del%20Tercer%20Molar%20%28Cordal%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-auto" style="background:var(--primary);color:white;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="modelo">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Tecnología 3D Avanzada</h2>
+                <p class="section-subtitle fade-in-up">Explora modelos dentales en 3D de forma interactiva</p>
+                <div id="tooth-viewer" class="fade-in-up">
+                    <div class="loading-message" id="loadingMsg">
+                        <div class="spinner-border text-light mb-2" role="status"></div>
+                        <p>Cargando modelo 3D...</p>
+                    </div>
+                </div>
+                <div class="text-center my-4">
+                    <button id="toggleModelState" class="btn btn-lg" style="background: var(--primary); color: white;" disabled>
+                        Cargando...
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light" id="instalaciones">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Nuestras Instalaciones</h2>
+                <p class="section-subtitle fade-in-up">Espacios modernos, limpios y diseñados para tu comodidad</p>
+                <div id="clinicCarousel" class="carousel slide fade-in-up" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/instalacion1.jpg" class="d-block w-100" alt="Clínica 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/instalacion2.jpg" class="d-block w-100" alt="Clínica 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/instalacion3.jpg" class="d-block w-100" alt="Clínica 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="antes-despues">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Antes y Después</h2>
+                <p class="section-subtitle fade-in-up">Resultados reales de nuestros tratamientos</p>
+                <div class="row g-4">
+                    <div class="col-md-6 fade-in-up stagger-delay-1">
+                        <div class="card">
+                            <img src="assets/antes.jpeg" class="card-img-top" alt="Antes">
+                            <div class="card-body text-center"><strong>Antes</strong></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in-up stagger-delay-2">
+                        <div class="card">
+                            <img src="assets/depues.jpeg" class="card-img-top" alt="Después">
+                            <div class="card-body text-center"><strong>Después</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botón Ver más -->
+                <div class="text-center mt-5 fade-in-up">
+                    <button onclick="abrirGaleria()" class="btn btn-lg" style="background:var(--primary);color:white;font-weight:700;padding:16px 48px;">
+                        <i class="fas fa-images me-2"></i>Ver más resultados
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ GALERÍA OVERLAY ══════════════════════════════════════ -->
+        <div id="galeriaOverlay" style="
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-gradient);
+            z-index: 9000;
+            overflow-y: auto;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        ">
+            <!-- Header de la galería -->
+            <div style="
+                background: rgba(255,255,255,0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0,0,0,0.08);
+                padding: 20px 0;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            ">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <div>
+                        <h3 style="margin:0;color:var(--accent);font-size:1.6rem;">Galería de Resultados</h3>
+                        <p style="margin:0;color:var(--text-light);font-size:0.9rem;">Haz clic en cualquier foto para ver los detalles del tratamiento</p>
+                    </div>
+                    <button onclick="cerrarGaleria()" class="btn" style="background:var(--primary);color:white;font-weight:700;border-radius:12px;padding:12px 28px;">
+                        <i class="fas fa-arrow-left me-2"></i>Volver
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de fotos -->
+            <div class="container" style="padding: 48px 12px;">
+                <div class="galeria-grid" id="galeriaGrid">
+
+                    <!-- ── CASO 1 ── -->
+                    <div class="galeria-item" onclick="abrirLightbox(0)">
+                        <div class="galeria-img-wrap">
+                            <img src="assets/antes.jpeg" alt="Caso 1 - Antes">
+                            <img src="assets/depues.jpeg" alt="Caso 1 - Después">
+                        </div>
+                        <div class="galeria-info">
+                            <span class="galeria-tag">Blanqueamiento</span>
+                            <p class="galeria-desc">Blanqueamiento dental profesional</p>
+                            <span class="galeria-ver"><i class="fas fa-expand-alt me-1"></i>Ver detalles</span>
+                        </div>
+                    </div>
+
+                    <!-- ── CASO 2 — agrega tu imagen ── -->
+                    <div class="galeria-item" onclick="abrirLightbox(1)">
+                        <div class="galeria-img-wrap galeria-placeholder">
+                            <div class="placeholder-box">
+                                <i class="fas fa-image"></i>
+                                <span>Foto 2</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <span class="galeria-tag">Ortodoncia</span>
+                            <p class="galeria-desc">Corrección con brackets</p>
+                            <span class="galeria-ver"><i class="fas fa-expand-alt me-1"></i>Ver detalles</span>
+                        </div>
+                    </div>
+
+                    <!-- ── CASO 3 — agrega tu imagen ── -->
+                    <div class="galeria-item" onclick="abrirLightbox(2)">
+                        <div class="galeria-img-wrap galeria-placeholder">
+                            <div class="placeholder-box">
+                                <i class="fas fa-image"></i>
+                                <span>Foto 3</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <span class="galeria-tag">Restauración</span>
+                            <p class="galeria-desc">Restauración con resina</p>
+                            <span class="galeria-ver"><i class="fas fa-expand-alt me-1"></i>Ver detalles</span>
+                        </div>
+                    </div>
+
+                    <!-- ── CASO 4 — agrega tu imagen ── -->
+                    <div class="galeria-item" onclick="abrirLightbox(3)">
+                        <div class="galeria-img-wrap galeria-placeholder">
+                            <div class="placeholder-box">
+                                <i class="fas fa-image"></i>
+                                <span>Foto 4</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <span class="galeria-tag">Prótesis</span>
+                            <p class="galeria-desc">Prótesis dental fija</p>
+                            <span class="galeria-ver"><i class="fas fa-expand-alt me-1"></i>Ver detalles</span>
+                        </div>
+                    </div>
+
+                    <!-- ── CASO 5 — agrega tu imagen ── -->
+                    <div class="galeria-item" onclick="abrirLightbox(4)">
+                        <div class="galeria-img-wrap galeria-placeholder">
+                            <div class="placeholder-box">
+                                <i class="fas fa-image"></i>
+                                <span>Foto 5</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <span class="galeria-tag">Limpieza</span>
+                            <p class="galeria-desc">Profilaxis profunda</p>
+                            <span class="galeria-ver"><i class="fas fa-expand-alt me-1"></i>Ver detalles</span>
+                        </div>
+                    </div>
+
+                    <!-- ── CASO 6 — agrega tu imagen ── -->
+                    <div class="galeria-item" onclick="abrirLightbox(5)">
+                        <div class="galeria-img-wrap galeria-placeholder">
+                            <div class="placeholder-box">
+                                <i class="fas fa-image"></i>
+                                <span>Foto 6</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <span class="galeria-tag">Canal</span>
+                            <p class="galeria-desc">Tratamiento de canal</p>
+                            <span class="galeria-ver"><i class="fas fa-expand-alt me-1"></i>Ver detalles</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-5">
+                    <button onclick="cerrarGaleria()" class="btn btn-lg" style="background:var(--primary);color:white;font-weight:700;padding:16px 48px;">
+                        <i class="fas fa-arrow-left me-2"></i>Volver a Antes y Después
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ LIGHTBOX ════════════════════════════════════════════ -->
+        <div id="lightbox" onclick="cerrarLightbox()" style="
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: zoom-out;
+        ">
+            <div onclick="event.stopPropagation()" style="
+                background: var(--card-bg);
+                border-radius: 24px;
+                max-width: 860px;
+                width: 92%;
+                margin: 40px auto;
+                overflow: hidden;
+                box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+                cursor: default;
+            ">
+                <!-- Imágenes antes/después -->
+                <div id="lbImgs" style="display:grid;grid-template-columns:1fr 1fr;"></div>
+
+                <!-- Info del tratamiento -->
+                <div style="padding: 28px 32px 32px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <span id="lbTag" class="galeria-tag" style="font-size:0.9rem;"></span>
+                    </div>
+                    <h4 id="lbTitulo" style="font-size:1.4rem;color:var(--accent);margin-bottom:10px;"></h4>
+                    <p id="lbDescripcion" style="color:var(--text-medium);line-height:1.7;margin-bottom:20px;font-size:1rem;"></p>
+                    <div id="lbDetalles" style="
+                        background: linear-gradient(135deg, rgba(8,145,178,0.07), rgba(16,185,129,0.07));
+                        border-radius: 14px;
+                        padding: 18px 20px;
+                        margin-bottom: 20px;
+                    "></div>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                        <a id="lbWhatsapp" href="#" target="_blank" class="btn" style="background:var(--primary);color:white;font-weight:700;">
+                            <i class="fab fa-whatsapp me-2"></i>Consultar este tratamiento
+                        </a>
+                        <button onclick="cerrarLightbox()" class="btn" style="background:transparent;border:2px solid rgba(0,0,0,0.15);color:var(--text-medium);font-weight:600;">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="services-section py-5" id="precios">
+            <div class="container text-center">
+                <h2 class="section-title mb-3">Servicios y Tarifas</h2>
+                <p class="section-subtitle mb-5">Precios transparentes y atención profesional.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4>Evaluación dental</h4>
+                        <p>Revisión inicial completa</p>
+                        <span class="price">Gratis</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20quiero%20agendar%20mi%20Evaluaci%C3%B3n%20Dental%20gratuita.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Caries Simple</h4>
+                        <p>Tratamiento básico</p>
+                        <span class="price">RD$ 300</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Caries%20Simple%20%28RD%24%20300%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Restauraciones</h4>
+                        <p>Corrección de caries</p>
+                        <span class="price">RD$ 500</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Restauraciones%20Dentales%20%28RD%24%20500%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Limpieza Profunda</h4>
+                        <p>Profilaxis profesional</p>
+                        <span class="price">RD$ 1,000</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20la%20Limpieza%20Profunda%20%28Profilaxis%29%20%28RD%24%201%2C000%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Brackets</h4>
+                        <p>Por arcada</p>
+                        <span class="price">RD$ 3,500</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Brackets%20%28Ortodoncia%29%20%28RD%24%203%2C500%20por%20arcada%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Componentes de Brackets</h4>
+                        <p>Botones, tubos y educadores</p>
+                        <span class="price">RD$ 300</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20Componentes%20de%20Brackets%20%28botones%2C%20tubos%2C%20educadores%29%20%28RD%24%20300%29.%20Me%20pueden%20ayudar%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Mantenimiento de brackets</h4>
+                        <p>Activación mensual</p>
+                        <span class="price">RD$ 700</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20quiero%20agendar%20mi%20Mantenimiento%20de%20Brackets%20mensual%20%28RD%24%20700%29.%20Me%20dan%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Extracción Simple</h4>
+                        <p>Cirugía básica</p>
+                        <span class="price">RD$ 1,000</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20la%20Extracci%C3%B3n%20Dental%20Simple%20%28RD%24%201%2C000%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Extracción de Cordal</h4>
+                        <p>Tercer molar</p>
+                        <span class="price">RD$ 3,500</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20la%20Extracci%C3%B3n%20del%20Tercer%20Molar%20%28Cordal%29%20%28RD%24%203%2C500%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Anestesia Extra</h4>
+                        <p>Procedimiento especial</p>
+                        <span class="price">RD$ 500</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20tengo%20una%20consulta%20sobre%20la%20Anestesia%20Extra%20%28RD%24%20500%29.%20Me%20pueden%20dar%20informaci%C3%B3n%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Retenedor Fijo</h4>
+                        <p>Ortodoncia</p>
+                        <span class="price">RD$ 3,500</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20Retenedor%20Fijo%20%28RD%24%203%2C500%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Retenedor Estético</h4>
+                        <p>Transparente</p>
+                        <span class="price">RD$ 3,000</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20Retenedor%20Est%C3%A9tico%20Transparente%20%28RD%24%203%2C000%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Tratamiento de Canal</h4>
+                        <p>Endodoncia</p>
+                        <span class="price">RD$ 6,000</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20Tratamiento%20de%20Canal%20%28Endodoncia%29%20%28RD%24%206%2C000%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Perno Dental</h4>
+                        <p>Refuerzo estructural</p>
+                        <span class="price">RD$ 3,000</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20Perno%20Dental%20%28RD%24%203%2C000%29.%20Me%20pueden%20dar%20informaci%C3%B3n%20y%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                    <div class="service-card">
+                        <h4>Blanqueamiento</h4>
+                        <p>Por sesión</p>
+                        <span class="price">RD$ 2,500</span>
+                        <br><a href="https://wa.me/18494892788?text=Hola%2C%20me%20interesa%20el%20Blanqueamiento%20Dental%20%28RD%24%202%2C500%20por%20sesi%C3%B3n%29.%20Me%20pueden%20dar%20disponibilidad%3F" target="_blank" class="btn mt-3" style="background:var(--primary);color:white;width:100%;"><i class="fab fa-whatsapp me-2"></i>Consultar</a>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <a href="https://wa.me/18494892788?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" class="btn btn-lg" style="background: var(--primary); color:white;">
+                        Agendar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light" id="faq">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Preguntas Frecuentes</h2>
+                <p class="section-subtitle fade-in-up">Resolvemos tus dudas más comunes antes de tu visita</p>
+                <div class="accordion accordion-flush fade-in-up" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                ¿Duele el tratamiento de canal?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                No. El tratamiento se realiza con anestesia local, por lo que el procedimiento es indoloro. Puede haber una leve molestia después, pero es temporal.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                ¿Cuánto dura un blanqueamiento?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                El efecto del blanqueamiento puede durar entre 1 y 3 años, dependiendo de tus hábitos (café, cigarrillo, higiene, etc.).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                ¿Atienden emergencias dentales?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sí, atendemos emergencias dentales. Si tienes un dolor fuerte, una fractura o cualquier urgencia, contáctanos por WhatsApp al 849-489-2788 y te damos la próxima disponibilidad lo antes posible. Hacemos todo lo posible por atenderte el mismo día.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                ¿Aceptan pagos con tarjeta o en cuotas?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sí, aceptamos pagos en efectivo y con tarjeta de crédito o débito. También manejamos facilidades de pago para tratamientos de mayor costo como brackets o tratamientos de canal. Consúltanos al momento de tu cita y buscamos la opción que mejor se adapte a ti.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light" id="resenas">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Reseñas</h2>
+                <p class="section-subtitle fade-in-up">La satisfacción de nuestros pacientes es nuestra mejor carta de presentación</p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-1">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>María González</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"Excelente atención y profesionalismo. El Dr. me explicó todo con modelos 3D y me sentí muy segura."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-2">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Carlos Rodríguez</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"Mi implante quedó perfecto. Tecnología de punta y personal muy amable. 100% recomendado."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-3">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Laura Sánchez</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"El blanqueamiento cambió mi sonrisa por completo. Instalaciones impecables y trato excelente."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-1">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Juan Pérez</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"Rápido, indoloro y resultados impresionantes. Volveré para el tratamiento de mi esposa."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-2">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Ana Martínez</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"Atención muy humana y precios justos. Me siento muy cómoda viniendo aquí."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-3">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Pedro López</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"La mejor experiencia dental que he tenido. Tecnología 3D realmente hace la diferencia."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 fade-in-up stagger-delay-4">
+                        <div class="review-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Sofía Ramírez</h5>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                            <p class="review-text">"Desde la primera consulta se nota el profesionalismo. Mi sonrisa nunca había estado tan bien."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contacto">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Contáctanos</h2>
+                <p class="section-subtitle fade-in-up">Estamos aquí para atenderte</p>
+                <div class="row g-5">
+                    <div class="col-lg-6 fade-in-up">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Teléfono / WhatsApp</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Motivo de consulta</label>
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn w-100 py-3" style="background: var(--primary); color:white;">Enviar Mensaje</button>
+                        </form>
+                        <div class="text-center mt-4 d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="https://wa.me/18494892788?text=Hola%20Aj%20Dent,%20quiero%20agendar%20una%20cita" class="btn btn-success btn-lg">
+                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                            </a>
+                            <a href="https://www.instagram.com/aj.dent.do/" target="_blank" class="btn btn-lg" style="background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D); color: white; border: none;">
+                                <i class="fab fa-instagram me-2"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in-up">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30260!2d-69.9!3d18.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMwJzAwLjAiTiA2OcKwNTQnMDAuMCJX!5e0!3m2!1ses!2sdo!4v1690000000000" width="100%" height="450" style="border:0; border-radius: var(--border-radius); box-shadow: var(--shadow-md);" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <img src="assets/footer.png" alt="Aj Dent" class="footer-logo">
+                    <p class="mt-3">Clínica dental moderna con tecnología avanzada y atención personalizada.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5>Enlaces</h5>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#modelo">Modelo 3D</a></li>
+                        <li><a href="#horario">Horario</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Contacto</h5>
+                    <div class="footer-social">
+                        <a href="https://wa.me/18494892788" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aj.dent.do/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="mt-3">Santo Domingo, República Dominicana</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center footer-bottom">
+                © 2026 AJ Dent. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/18494892788?text=Hola,%20quiero%20agendar%20una%20cita%20en%20la%20clínica.%20¿Me%20podrían%20dar%20información,%20por%20favor?" class="whatsapp-float" target="_blank">
+        <img src="assets/whatsapp.png" alt="WhatsApp">
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+        /* ── SCROLL ANIMATIONS ────────────────────────────────────── */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        /* ══════════════════════════════════════════════════════════
+           THREE.JS  –  VISOR 3D
+        ══════════════════════════════════════════════════════════ */
+        const container  = document.getElementById('tooth-viewer');
+        const toggleBtn  = document.getElementById('toggleModelState');
+        const loadingMsg = document.getElementById('loadingMsg');
+
+        let scene, camera, renderer, controls;
+        let modelClean = null;
+        let modelDirty = null;
+        let isClean    = true;
+        let needsRender = true;
+        let loadedCount = 0;
+
+        function init3D() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1e3a5f);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.outputColorSpace = THREE.SRGBColorSpace;
+            renderer.toneMapping      = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1;
+            resizeRenderer();
+            container.appendChild(renderer.domElement);
+
+            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 1000);
+            camera.position.set(0, 50, 200);
+
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.target.set(0, 0, 0);
+            controls.enableDamping  = true;
+            controls.dampingFactor  = 0.07;
+            controls.addEventListener('change', () => { needsRender = true; });
+
+            scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1.5));
+            const key  = new THREE.DirectionalLight(0xfff1cc, 1);   key.position.set(5, 10, 7);  scene.add(key);
+            const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(-5, 5, 5); scene.add(fill);
+            const back = new THREE.DirectionalLight(0xffddaa, 0.4); back.position.set(0, -5, -5); scene.add(back);
+
+            new RGBELoader().load(
+                'assets/studio_small_03_1k.hdr',
+                (tex) => {
+                    tex.mapping = THREE.EquirectangularReflectionMapping;
+                    scene.environment = tex;
+                    needsRender = true;
+                },
+                undefined,
+                () => console.warn('HDR no disponible.')
+            );
+
+            loadModels();
+            window.addEventListener('resize', onResize);
+            screen.orientation?.addEventListener('change', onResize);
+            loop();
+        }
+
+        function resizeRenderer() {
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+            renderer.setSize(w, h, false);
+            if (camera) {
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+            }
+            needsRender = true;
+        }
+
+        function onResize() {
+            clearTimeout(onResize._t);
+            onResize._t = setTimeout(resizeRenderer, 150);
+        }
+
+        function loadModels() {
+            const loader = new GLTFLoader();
+            loader.load('assets/mordida.glb', (gltf) => {
+                modelClean = gltf.scene;
+                modelClean.scale.set(150, 150, 150);
+                centerModel(modelClean);
+                modelClean.visible = true;
+                scene.add(modelClean);
+                onModelLoaded();
+            }, undefined, (err) => showError('Error al cargar modelo limpio: ' + err.message));
+
+            loader.load('assets/mordidadirty.glb', (gltf) => {
+                modelDirty = gltf.scene;
+                modelDirty.scale.set(120, 120, 120);
+                centerModel(modelDirty);
+                modelDirty.visible = false;
+                scene.add(modelDirty);
+                onModelLoaded();
+            }, undefined, (err) => { console.error('Error cargando modelo sucio:', err); onModelLoaded(); });
+        }
+
+        function centerModel(model) {
+            const box    = new THREE.Box3().setFromObject(model);
+            const center = box.getCenter(new THREE.Vector3());
+            model.position.sub(center);
+        }
+
+        function onModelLoaded() {
+            loadedCount++;
+            if (loadedCount >= 1 && loadingMsg) loadingMsg.remove();
+            if (loadedCount >= 2) {
+                toggleBtn.disabled    = false;
+                toggleBtn.textContent = 'Comparar';
+            }
+            needsRender = true;
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            if (!modelClean) return;
+            if (isClean) {
+                modelClean.visible = false;
+                if (modelDirty) modelDirty.visible = true;
+                toggleBtn.textContent = 'Limpiar';
+            } else {
+                modelClean.visible = true;
+                if (modelDirty) modelDirty.visible = false;
+                toggleBtn.textContent = 'Comparar';
+            }
+            isClean     = !isClean;
+            needsRender = true;
+        });
+
+        function loop() {
+            requestAnimationFrame(loop);
+            if (controls) controls.update();
+            if (needsRender) {
+                renderer.render(scene, camera);
+                needsRender = false;
+            }
+        }
+
+        function showError(msg) {
+            if (loadingMsg) loadingMsg.innerHTML = `<p style="color:#f87171;font-weight:600;">${msg}</p>`;
+        }
+
+        init3D();
+    </script>
+    <script>
+    /* ══ DATOS DE LA GALERÍA ══════════════════════════════════════
+       Para agregar un caso:
+       1. Copia el bloque galeria-item en el HTML y pon tus imágenes
+       2. Agrega un objeto más en este array con la info del caso
+    ═══════════════════════════════════════════════════════════════ */
+    const casos = [
+        {
+            tag: "Blanqueamiento",
+            titulo: "Blanqueamiento dental profesional",
+            descripcion: "Paciente con manchas por consumo de café y tabaco. Se realizó blanqueamiento profesional en consultorio con lámpara LED de alta potencia, logrando aclarar el tono 8 niveles en una sola sesión.",
+            detalles: [
+                { icon: "fa-clock", texto: "Duración del procedimiento: 1.5 horas" },
+                { icon: "fa-calendar-check", texto: "Sesiones realizadas: 1" },
+                { icon: "fa-star", texto: "Resultado: 8 tonos más claro" },
+                { icon: "fa-shield-alt", texto: "Sin sensibilidad post-tratamiento" },
+            ],
+            imgAntes: "assets/antes.jpeg",
+            imgDespues: "assets/depues.jpeg",
+            whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20el%20Blanqueamiento%20Dental.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        },
+        {
+            tag: "Ortodoncia",
+            titulo: "Corrección con brackets",
+            descripcion: "Agrega aquí la descripción de este caso.",
+            detalles: [
+                { icon: "fa-clock", texto: "Duración: X meses" },
+                { icon: "fa-star", texto: "Resultado: Descripción del resultado" },
+            ],
+            imgAntes: null,
+            imgDespues: null,
+            whatsapp: "Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Ortodoncia.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        },
+        {
+            tag: "Restauración",
+            titulo: "Restauración con resina",
+            descripcion: "Agrega aquí la descripción de este caso.",
+            detalles: [
+                { icon: "fa-clock", texto: "Duración: X horas" },
+                { icon: "fa-star", texto: "Resultado: Descripción del resultado" },
+            ],
+            imgAntes: null,
+            imgDespues: null,
+            whatsapp: "Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Restauraci%C3%B3n.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        },
+        {
+            tag: "Prótesis",
+            titulo: "Prótesis dental fija",
+            descripcion: "Agrega aquí la descripción de este caso.",
+            detalles: [
+                { icon: "fa-clock", texto: "Duración: X días" },
+                { icon: "fa-star", texto: "Resultado: Descripción del resultado" },
+            ],
+            imgAntes: null,
+            imgDespues: null,
+            whatsapp: "Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Pr%C3%B3tesis.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        },
+        {
+            tag: "Limpieza",
+            titulo: "Profilaxis profunda",
+            descripcion: "Agrega aquí la descripción de este caso.",
+            detalles: [
+                { icon: "fa-clock", texto: "Duración: 1 hora" },
+                { icon: "fa-star", texto: "Resultado: Descripción del resultado" },
+            ],
+            imgAntes: null,
+            imgDespues: null,
+            whatsapp: "Hola%2C%20me%20interesa%20la%20Limpieza%20Profunda.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        },
+        {
+            tag: "Canal",
+            titulo: "Tratamiento de canal",
+            descripcion: "Agrega aquí la descripción de este caso.",
+            detalles: [
+                { icon: "fa-clock", texto: "Duración: X horas" },
+                { icon: "fa-star", texto: "Resultado: Descripción del resultado" },
+            ],
+            imgAntes: null,
+            imgDespues: null,
+            whatsapp: "Hola%2C%20me%20interesa%20el%20Tratamiento%20de%20Canal.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        },
+    ];
+
+    /* ── Abrir / cerrar galería ───────────────────────────────── */
+    function abrirGaleria() {
+        const overlay = document.getElementById('galeriaOverlay');
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+            overlay.scrollTop = 0;
+        });
+    }
+
+    function cerrarGaleria() {
+        const overlay = document.getElementById('galeriaOverlay');
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 400);
+    }
+
+    /* ── Lightbox ────────────────────────────────────────────── */
+    function abrirLightbox(idx) {
+        const caso = casos[idx];
+        const lb   = document.getElementById('lightbox');
+
+        // Imágenes
+        const lbImgs = document.getElementById('lbImgs');
+        const tieneImgs = caso.imgAntes && caso.imgDespues;
+        lbImgs.innerHTML = tieneImgs
+            ? `<div class="lb-col"><img src="${caso.imgAntes}" alt="Antes"><div class="lb-label">ANTES</div></div>
+               <div class="lb-col"><img src="${caso.imgDespues}" alt="Después"><div class="lb-label">DESPUÉS</div></div>`
+            : `<div style="grid-column:1/-1;height:180px;background:linear-gradient(135deg,#e0f2fe,#d1fae5);display:flex;align-items:center;justify-content:center;color:var(--primary);opacity:0.5;font-size:3rem;">
+                 <i class="fas fa-image"></i>
+               </div>`;
+
+        document.getElementById('lbTag').textContent        = caso.tag;
+        document.getElementById('lbTitulo').textContent     = caso.titulo;
+        document.getElementById('lbDescripcion').textContent = caso.descripcion;
+        document.getElementById('lbWhatsapp').href          = `https://wa.me/18494892788?text=${caso.whatsapp}`;
+
+        // Detalles
+        const det = document.getElementById('lbDetalles');
+        det.innerHTML = caso.detalles.map(d =>
+            `<div class="lb-detail-row"><i class="fas ${d.icon}"></i><span>${d.texto}</span></div>`
+        ).join('');
+
+        lb.style.display = 'flex';
+        lb.style.alignItems = 'flex-start';
+        lb.style.justifyContent = 'center';
+        lb.style.overflowY = 'auto';
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => { lb.style.opacity = '1'; });
+    }
+
+    function cerrarLightbox() {
+        const lb = document.getElementById('lightbox');
+        lb.style.opacity = '0';
+        setTimeout(() => {
+            lb.style.display = 'none';
+            document.body.style.overflow = 'hidden'; // galería sigue abierta
+        }, 300);
+    }
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const lb = document.getElementById('lightbox');
+            if (lb.style.display !== 'none') { cerrarLightbox(); return; }
+            const ov = document.getElementById('galeriaOverlay');
+            if (ov.style.display !== 'none') cerrarGaleria();
+        }
+    });
+    </script>
+</body>
+</html>
