@@ -262,9 +262,7 @@
                     </div>
                 </div>
                 <div class="text-center my-4">
-                    <button id="toggleModelState" class="btn btn-lg" style="background: var(--primary); color: white;" disabled>
-                        Cargando...
-                    </button>
+
                 </div>
             </div>
         </section>
@@ -825,158 +823,116 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-        import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
-        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+<script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-        /* ── SCROLL ANIMATIONS ────────────────────────────────────── */
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-        /* ══════════════════════════════════════════════════════════
-           THREE.JS  –  VISOR 3D
-        ══════════════════════════════════════════════════════════ */
-        const container  = document.getElementById('tooth-viewer');
-        const toggleBtn  = document.getElementById('toggleModelState');
-        const loadingMsg = document.getElementById('loadingMsg');
+    const container  = document.getElementById('tooth-viewer');
+    const loadingMsg = document.getElementById('loadingMsg');
 
-        let scene, camera, renderer, controls;
-        let modelClean = null;
-        let modelDirty = null;
-        let isClean    = true;
-        let needsRender = true;
-        let loadedCount = 0;
+    let scene, camera, renderer, controls;
+    let modelClean = null;
+    let needsRender = true;
 
-        function init3D() {
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x1e3a5f);
+    function init3D() {
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1e3a5f);
 
-            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.outputColorSpace = THREE.SRGBColorSpace;
-            renderer.toneMapping      = THREE.ACESFilmicToneMapping;
-            renderer.toneMappingExposure = 1;
-            resizeRenderer();
-            container.appendChild(renderer.domElement);
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1;
+        resizeRenderer();
+        container.appendChild(renderer.domElement);
 
-            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 1000);
-            camera.position.set(0, 50, 200);
+        camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 1000);
+        camera.position.set(0, 50, 200);
 
-            controls = new OrbitControls(camera, renderer.domElement);
-            controls.target.set(0, 0, 0);
-            controls.enableDamping  = true;
-            controls.dampingFactor  = 0.07;
-            controls.addEventListener('change', () => { needsRender = true; });
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.target.set(0, 0, 0);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.07;
+        controls.addEventListener('change', () => { needsRender = true; });
 
-            scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1.5));
-            const key  = new THREE.DirectionalLight(0xfff1cc, 1);   key.position.set(5, 10, 7);  scene.add(key);
-            const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(-5, 5, 5); scene.add(fill);
-            const back = new THREE.DirectionalLight(0xffddaa, 0.4); back.position.set(0, -5, -5); scene.add(back);
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1.5));
+        const key = new THREE.DirectionalLight(0xfff1cc, 1); key.position.set(5, 10, 7); scene.add(key);
+        const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(-5, 5, 5); scene.add(fill);
+        const back = new THREE.DirectionalLight(0xffddaa, 0.4); back.position.set(0, -5, -5); scene.add(back);
 
-            new RGBELoader().load(
-                'assets/studio_small_03_1k.hdr',
-                (tex) => {
-                    tex.mapping = THREE.EquirectangularReflectionMapping;
-                    scene.environment = tex;
-                    needsRender = true;
-                },
-                undefined,
-                () => console.warn('HDR no disponible.')
-            );
+        new RGBELoader().load(
+            'assets/studio_small_03_1k.hdr',
+            (tex) => {
+                tex.mapping = THREE.EquirectangularReflectionMapping;
+                scene.environment = tex;
+                needsRender = true;
+            },
+            undefined,
+            () => console.warn('HDR no disponible.')
+        );
 
-            loadModels();
-            window.addEventListener('resize', onResize);
-            screen.orientation?.addEventListener('change', onResize);
-            loop();
+        loadModel();
+        window.addEventListener('resize', onResize);
+        screen.orientation?.addEventListener('change', onResize);
+        loop();
+    }
+
+    function resizeRenderer() {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        renderer.setSize(w, h, false);
+        if (camera) {
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
         }
+        needsRender = true;
+    }
 
-        function resizeRenderer() {
-            const w = container.clientWidth;
-            const h = container.clientHeight;
-            renderer.setSize(w, h, false);
-            if (camera) {
-                camera.aspect = w / h;
-                camera.updateProjectionMatrix();
-            }
+    function onResize() {
+        clearTimeout(onResize._t);
+        onResize._t = setTimeout(resizeRenderer, 150);
+    }
+
+    function loadModel() {
+        const loader = new GLTFLoader();
+        loader.load('assets/mordida.glb', (gltf) => {
+            modelClean = gltf.scene;
+            modelClean.scale.set(150, 150, 150);
+            centerModel(modelClean);
+            scene.add(modelClean);
+            if (loadingMsg) loadingMsg.remove();
             needsRender = true;
+        }, undefined, (err) => showError('Error al cargar modelo: ' + err.message));
+    }
+
+    function centerModel(model) {
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        model.position.sub(center);
+    }
+
+    function loop() {
+        requestAnimationFrame(loop);
+        if (controls) controls.update();
+        if (needsRender) {
+            renderer.render(scene, camera);
+            needsRender = false;
         }
+    }
 
-        function onResize() {
-            clearTimeout(onResize._t);
-            onResize._t = setTimeout(resizeRenderer, 150);
-        }
+    function showError(msg) {
+        if (loadingMsg) loadingMsg.innerHTML = `<p style="color:#f87171;font-weight:600;">${msg}</p>`;
+    }
 
-        function loadModels() {
-            const loader = new GLTFLoader();
-            loader.load('assets/mordida.glb', (gltf) => {
-                modelClean = gltf.scene;
-                modelClean.scale.set(150, 150, 150);
-                centerModel(modelClean);
-                modelClean.visible = true;
-                scene.add(modelClean);
-                onModelLoaded();
-            }, undefined, (err) => showError('Error al cargar modelo limpio: ' + err.message));
-
-            loader.load('assets/mordidadirty.glb', (gltf) => {
-                modelDirty = gltf.scene;
-                modelDirty.scale.set(120, 120, 120);
-                centerModel(modelDirty);
-                modelDirty.visible = false;
-                scene.add(modelDirty);
-                onModelLoaded();
-            }, undefined, (err) => { console.error('Error cargando modelo sucio:', err); onModelLoaded(); });
-        }
-
-        function centerModel(model) {
-            const box    = new THREE.Box3().setFromObject(model);
-            const center = box.getCenter(new THREE.Vector3());
-            model.position.sub(center);
-        }
-
-        function onModelLoaded() {
-            loadedCount++;
-            if (loadedCount >= 1 && loadingMsg) loadingMsg.remove();
-            if (loadedCount >= 2) {
-                toggleBtn.disabled    = false;
-                toggleBtn.textContent = 'Comparar';
-            }
-            needsRender = true;
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            if (!modelClean) return;
-            if (isClean) {
-                modelClean.visible = false;
-                if (modelDirty) modelDirty.visible = true;
-                toggleBtn.textContent = 'Limpiar';
-            } else {
-                modelClean.visible = true;
-                if (modelDirty) modelDirty.visible = false;
-                toggleBtn.textContent = 'Comparar';
-            }
-            isClean     = !isClean;
-            needsRender = true;
-        });
-
-        function loop() {
-            requestAnimationFrame(loop);
-            if (controls) controls.update();
-            if (needsRender) {
-                renderer.render(scene, camera);
-                needsRender = false;
-            }
-        }
-
-        function showError(msg) {
-            if (loadingMsg) loadingMsg.innerHTML = `<p style="color:#f87171;font-weight:600;">${msg}</p>`;
-        }
-
-        init3D();
-    </script>
+    init3D();
+</script>
     <script>
     /* ══ DATOS DE LA GALERÍA ══════════════════════════════════════
        Para agregar un caso:
