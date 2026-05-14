@@ -297,7 +297,7 @@ async function sendMessage() {
     const typing = showTyping();
 
     try {
-const response = await fetch('https://aj-dent.onrender.com', {
+const response = await fetch('https://aj-dent.onrender.com/api/chat', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
