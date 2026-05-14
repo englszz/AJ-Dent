@@ -3,3 +3,5 @@ assets/*.stl
 assets/*dirty*
 assets/*.hdr
 .vscode/
+node_modules
+.env
