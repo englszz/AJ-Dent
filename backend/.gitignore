@@ -1,0 +1,5 @@
+﻿assets/*.blend
+assets/*.stl
+assets/*dirty*
+assets/*.hdr
+.vscode/
