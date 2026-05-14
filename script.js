@@ -20,78 +20,69 @@ document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 ══════════════════════════════════════════════════════════════ */
 const casos = [
     {
-        tag: "Blanqueamiento",
-        titulo: "Blanqueamiento dental profesional",
-        descripcion: "Paciente con manchas por consumo de café y tabaco. Se realizó blanqueamiento profesional en consultorio con lámpara LED de alta potencia, logrando aclarar el tono 8 niveles en una sola sesión.",
+        tag: "Limpieza",
+        titulo: "Limpieza dental profesional",
+        descripcion: "Paciente que acude para limpieza de rutina. Se realizó profilaxis completa eliminando placa y sarro acumulado, dejando los dientes limpios y saludables.",
         detalles: [
-            { icon: "fa-clock",        texto: "Duración del procedimiento: 1.5 horas" },
-            { icon: "fa-calendar-check", texto: "Sesiones realizadas: 1" },
-            { icon: "fa-star",         texto: "Resultado: 8 tonos más claro" },
-            { icon: "fa-shield-alt",   texto: "Sin sensibilidad post-tratamiento" },
+            { icon: "fa-clock", texto: "Duración: 1 hora" },
+            { icon: "fa-calendar-check", texto: "Sesiones: 1" },
+            { icon: "fa-shield-alt", texto: "Sin molestias post-tratamiento" },
         ],
-        imgAntes: "assets/antes.jpeg",
-        imgDespues: "assets/depues.jpeg",
-        whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20el%20Blanqueamiento%20Dental.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        imgAntes: "assets/antes-y-despues/antes.jpg",
+        imgDespues: "assets/antes-y-despues/depues.jpg",
+        whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20una%20Limpieza%20Dental.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
     },
     {
         tag: "Ortodoncia",
-        titulo: "Corrección con brackets",
-        descripcion: "Agrega aquí la descripción de este caso.",
+        titulo: "Instalación de brackets",
+        descripcion: "Caso de ortodoncia en proceso. Se realizó la instalación completa de brackets para corrección de la posición dental y mejora de la mordida.",
         detalles: [
-            { icon: "fa-clock", texto: "Duración: X meses" },
-            { icon: "fa-star",  texto: "Resultado: Descripción del resultado" },
+            { icon: "fa-clock", texto: "Tratamiento: 18-24 meses" },
+            { icon: "fa-calendar-check", texto: "Mantenimiento mensual" },
+            { icon: "fa-star", texto: "Corrección de mordida y alineación" },
         ],
-        imgAntes: null,
-        imgDespues: null,
-        whatsapp: "Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Ortodoncia.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
-    },
-    {
-        tag: "Restauración",
-        titulo: "Restauración con resina",
-        descripcion: "Agrega aquí la descripción de este caso.",
-        detalles: [
-            { icon: "fa-clock", texto: "Duración: X horas" },
-            { icon: "fa-star",  texto: "Resultado: Descripción del resultado" },
-        ],
-        imgAntes: null,
-        imgDespues: null,
-        whatsapp: "Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Restauraci%C3%B3n.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        imgAntes: "assets/antes-y-despues/brackets1.png",
+        imgDespues: "assets/antes-y-despues/brackets2.png",
+        whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20el%20tratamiento%20de%20Brackets.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
     },
     {
         tag: "Prótesis",
-        titulo: "Prótesis dental fija",
-        descripcion: "Agrega aquí la descripción de este caso.",
+        titulo: "Colocación de diente provisional",
+        descripcion: "Paciente con ausencia dental. Se colocó un diente provisional de alta calidad estética mientras se finaliza el tratamiento definitivo, restaurando función y apariencia.",
         detalles: [
-            { icon: "fa-clock", texto: "Duración: X días" },
-            { icon: "fa-star",  texto: "Resultado: Descripción del resultado" },
+            { icon: "fa-clock", texto: "Duración: 1-2 horas" },
+            { icon: "fa-star", texto: "Resultado estético inmediato" },
+            { icon: "fa-shield-alt", texto: "Función masticatoria restaurada" },
         ],
-        imgAntes: null,
-        imgDespues: null,
-        whatsapp: "Hola%2C%20me%20interesa%20el%20tratamiento%20de%20Pr%C3%B3tesis.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        imgAntes: "assets/antes-y-despues/dienteprovisional1.png",
+        imgDespues: "assets/antes-y-despues/dienteprovisional2.png",
+        whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20saber%20sobre%20Pr%C3%B3tesis%20Dentales.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
     },
     {
-        tag: "Limpieza",
-        titulo: "Profilaxis profunda",
-        descripcion: "Agrega aquí la descripción de este caso.",
+        tag: "Limpieza Profunda",
+        titulo: "Eliminación de sarro y manchas",
+        descripcion: "Paciente con acumulación severa de sarro y manchas que afectaban la salud de las encías. Se realizó una limpieza profunda (raspado y alisado radicular) logrando encías sanas y dientes limpios.",
         detalles: [
-            { icon: "fa-clock", texto: "Duración: 1 hora" },
-            { icon: "fa-star",  texto: "Resultado: Descripción del resultado" },
+            { icon: "fa-clock", texto: "Duración: 1.5 horas" },
+            { icon: "fa-calendar-check", texto: "Sesiones: 1-2" },
+            { icon: "fa-shield-alt", texto: "Encías recuperadas y saludables" },
         ],
-        imgAntes: null,
-        imgDespues: null,
-        whatsapp: "Hola%2C%20me%20interesa%20la%20Limpieza%20Profunda.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        imgAntes: "assets/antes-y-despues/limpiezaprofunda1.png",
+        imgDespues: "assets/antes-y-despues/limpiezaprofunda2.png",
+        whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20una%20Limpieza%20Profunda.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
     },
     {
-        tag: "Canal",
-        titulo: "Tratamiento de canal",
-        descripcion: "Agrega aquí la descripción de este caso.",
+        tag: "Restauración",
+        titulo: "Restauración cervical dental",
+        descripcion: "Paciente con desgaste en la parte cervical de los dientes. Se realizaron restauraciones con resina compuesta para corregir el desgaste, proteger la estructura dental y mejorar la estética.",
         detalles: [
-            { icon: "fa-clock", texto: "Duración: X horas" },
-            { icon: "fa-star",  texto: "Resultado: Descripción del resultado" },
+            { icon: "fa-clock", texto: "Duración: 1-2 horas" },
+            { icon: "fa-star", texto: "Resultado: Estructura dental protegida" },
+            { icon: "fa-shield-alt", texto: "Sin sensibilidad post-tratamiento" },
         ],
-        imgAntes: null,
-        imgDespues: null,
-        whatsapp: "Hola%2C%20me%20interesa%20el%20Tratamiento%20de%20Canal.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        imgAntes: "assets/antes-y-despues/restauraciones1.png",
+        imgDespues: "assets/antes-y-despues/restauraciones2.png",
+        whatsapp: "Hola%2C%20vi%20la%20galer%C3%ADa%20y%20me%20interesa%20el%20tratamiento%20de%20Restauraci%C3%B3n.%20Me%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
     },
 ];
 
@@ -393,8 +384,8 @@ function showTyping() {
                     message:   document.getElementById('motivo').value
                 };
 
-                emailjs.send('service_hxhdtxb', 'template_arj90ia', params)
-                    .then(() => emailjs.send('service_hxhdtxb', 'template_0ie067y', params))
+                    emailjs.send('service_hxhdtxb', 'template_0ie067y', params)
+                    .then(() => emailjs.send('service_hxhdtxb', 'template_arj90ia', params))
                     .then(() => {
                         msgExito.style.display = 'block';
                         btnTexto.innerHTML     = '✅ Enviado';
